@@ -23,10 +23,8 @@ public class CustomerService {
 
     @Transactional
     public List<Customer> getAllCustomers() {
-
         //return customerRepository.findAll();
         List<Customer> result = (List<Customer>) customerRepository.findAll();
-
         if(result.size() > 0) {
             return result;
         } else {
@@ -35,7 +33,6 @@ public class CustomerService {
     }
 
     //TODO: Implement methods for each controller method. Note that each of them has to call different method from Service.
-
     //Get customer by ID
     public Customer getCustomerById(Long id) throws Exception
     {

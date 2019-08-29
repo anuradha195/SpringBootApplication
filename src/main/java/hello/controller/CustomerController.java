@@ -40,16 +40,10 @@ public class CustomerController {
     @ResponseBody
     public ResponseEntity<List<Customer>> getAllCustomers(Model model){
         List<Customer> list=customerService.getAllCustomers();
-
         return new ResponseEntity<List<Customer>>(list, new HttpHeaders(), HttpStatus.OK);
     }
 
     //TODO: Create GET method that gets customer by its ID
-        /* @GetMapping("/id")
-        @ResponseBody
-        public Optional<Customer> allCustomersWithId(@RequestParam(name = "id") Long id){
-            return repo.findById(id);
-        } */
 
     @GetMapping("/findCustomerById/{id}")
     public ResponseEntity<Customer> getCustomerById(@PathVariable("id") Long id) throws Exception {
@@ -58,6 +52,7 @@ public class CustomerController {
     }
 
     //TODO: Create GET method that gets customer by search key (name, surname, etc.)
+
     @GetMapping("/findCustomerByLastName/{name}")
     @ResponseBody
     public Iterable<Customer> findCustomersByLastName(@PathVariable("name") String name) throws Exception {
@@ -72,19 +67,6 @@ public class CustomerController {
         return new ResponseEntity<Customer>(updated, new HttpHeaders(), HttpStatus.OK);
     }
 
-    /* @RequestMapping(path = "/saveCustomer", method = RequestMethod.POST)
-    public String createOrUpdateCustomer(Customer customer)
-    {
-        customerService.createOrUpdateCustomer(customer);
-        return "/all";
-    } */
-
-    /*@RequestMapping(path = "/saveNewCustomer", method = RequestMethod.POST)
-    public ResponseEntity<Object> saveCustomer(@RequestBody CustomerDto customerDto) {
-        long id = customerService.saveCustomer(customerDto);
-        URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(id).toUri();
-        return ResponseEntity.created(uri).build();
-    } */
 
     //TODO: Create PUT method to update existing customer. Note! If user tries to update not existing customer, throw an exception
 

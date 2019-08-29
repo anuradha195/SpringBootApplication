@@ -23,6 +23,7 @@ import java.util.Optional;
 
 import hello.model.Customer;
 import hello.repository.CustomerRepository;
+import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,6 +46,29 @@ public class CustomerRepositoryTests {
         entityManager.persist(customer);
         List<Customer> findByLastName = customers.findByLastName(customer.getLastName());
         assertThat(findByLastName).extracting(Customer::getLastName).containsOnly(customer.getLastName());
-
     }
+
+    @Test
+    public void searchWhenCustomersExistInDatabaseDuringStartById(){
+        List<Customer> customerList = customers.findAll();
+        Assert.assertEquals(5,customerList.size());
+    }
+
+    @Test
+    public void searchWhenCustomerIsDeletedById(){
+        long id = 2;
+        customers.deleteById(id);
+        List<Customer> customerList = customers.findAll();
+        Assert.assertEquals(4,customerList.size());
+    }
+
+    @Test
+    public void searchWhenCustomerIsDeletedByName(){
+        String lastName = "Dessler";
+        customers.deleteByLastName(lastName);
+        List<Customer> customer = customers.findByLastName(lastName);
+        Assert.assertEquals(0,customer.size());
+    }
+
+
 }
