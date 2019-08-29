@@ -71,7 +71,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.CustomerMapperTest">
+  <component name="RunManager" selected="Application.Application">
     <configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="hello.Application" />
       <module name="gs-accessing-data-jpa" />
@@ -115,22 +115,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CustomerRepositoryTests.searchWhenCustomersExistInDatabaseDuringStartById" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="gs-accessing-data-jpa" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="hello.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="hello" />
-      <option name="MAIN_CLASS_NAME" value="hello.CustomerRepositoryTests" />
-      <option name="METHOD_NAME" value="searchWhenCustomersExistInDatabaseDuringStartById" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="CustomerServiceTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="gs-accessing-data-jpa" />
       <extension name="coverage">
@@ -146,13 +130,27 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="hello in gs-accessing-data-jpa" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="gs-accessing-data-jpa" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="hello.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="hello" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Application" />
+        <item itemvalue="JUnit.hello in gs-accessing-data-jpa" />
         <item itemvalue="JUnit.CustomerMapperTest" />
         <item itemvalue="JUnit.CustomerRepositoryTests" />
         <item itemvalue="JUnit.CustomerServiceTests" />
-        <item itemvalue="Application.Application" />
-        <item itemvalue="JUnit.CustomerRepositoryTests.searchWhenCustomersExistInDatabaseDuringStartById" />
       </list>
     </recent_temporary>
   </component>
@@ -181,13 +179,16 @@
     </option>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/complete$Application.ic" NAME="Application Coverage Results" MODIFIED="1567005767214" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/complete$Application.ic" NAME="Application Coverage Results" MODIFIED="1567075473366" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>hello.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/complete$CustomerRepositoryTests_searchWhenCustomersExistInDatabaseDuringStartById.ic" NAME="CustomerRepositoryTests.searchWhenCustomersExistInDatabaseDuringStartById Coverage Results" MODIFIED="1567005556151" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>hello.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/complete$CustomerRepositoryTests.ic" NAME="CustomerRepositoryTests Coverage Results" MODIFIED="1567005909990" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>hello.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/complete$hello_in_gs_accessing_data_jpa.ic" NAME="hello in gs-accessing-data-jpa Coverage Results" MODIFIED="1567068273339" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>hello.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/complete$CustomerServiceTests.ic" NAME="CustomerServiceTests Coverage Results" MODIFIED="1567005805105" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

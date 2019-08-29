@@ -4,6 +4,7 @@ package hello.model;
 import javax.persistence.*;
 
 @Entity
+@Table(name="customer")
 public class Customer {
 
     //TODO: Add new fields to existing ones

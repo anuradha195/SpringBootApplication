@@ -22,26 +22,33 @@ import java.util.Optional;
 
 @Controller
 @RequestMapping("/")
+@SessionAttributes("customer")
 public class CustomerController {
 
     @Autowired
     CustomerService customerService;
     CustomerRepository repo;
 
-    @GetMapping("/")
-    public List<Customer> hello() {
-        return Collections.emptyList();
-    }
 
     //TODO: All logic has to be implemented in service!
 
     //TODO: Create GET method that retrieves all customers
-    @GetMapping("/all")
+     @GetMapping("/all")
     @ResponseBody
     public ResponseEntity<List<Customer>> getAllCustomers(Model model){
         List<Customer> list=customerService.getAllCustomers();
         return new ResponseEntity<List<Customer>>(list, new HttpHeaders(), HttpStatus.OK);
     }
+
+    /*
+    @GetMapping({"/customers","/all"})
+    public String findAllCustomers(Model model) {
+        model.addAttribute("customers", customerService.getAllCustomers());
+        return "customers";
+    } */
+
+
+
 
     //TODO: Create GET method that gets customer by its ID
 
@@ -61,9 +68,9 @@ public class CustomerController {
 
     //TODO: Create POST method to saves new customer
     @PostMapping
-    public ResponseEntity<Customer> createOrUpdateEmployee(Customer employee)
+    public ResponseEntity<Customer> createOrUpdatecustomer(Customer customer)
             throws Exception {
-        Customer updated = customerService.createOrUpdateCustomer(employee);
+        Customer updated = customerService.createOrUpdateCustomer(customer);
         return new ResponseEntity<Customer>(updated, new HttpHeaders(), HttpStatus.OK);
     }
 
@@ -82,9 +89,9 @@ public class CustomerController {
 
     //TODO: Create DELETE method that deletes customer by any other key
     @RequestMapping(path = "/deleteByLastName/{name}")
-    public String deleteEmployeeByLastName(Model model, @PathVariable("name") String lastName) throws Exception
+    public String deletecustomerByLastName(Model model, @PathVariable("name") String lastName) throws Exception
     {
-        customerService.deleteEmployeeByLastName(lastName);
+        customerService.deletecustomerByLastName(lastName);
         return "/all";
     }
 

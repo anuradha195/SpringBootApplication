@@ -10,7 +10,6 @@ public interface CustomerRepository extends CrudRepository<Customer, Long> {
 
     List<Customer> findAll();
     List<Customer> findByLastName(String lastName);
-    Optional<Customer> findById(long id);
 
     void deleteById(Long id);
     void deleteByLastName(String lastName);

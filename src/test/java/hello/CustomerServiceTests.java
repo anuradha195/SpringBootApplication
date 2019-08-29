@@ -10,20 +10,14 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
-import org.springframework.test.context.junit4.SpringRunner;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Optional;
-
-import static java.util.Optional.*;
-
-import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.when;
+
 
 @RunWith(MockitoJUnitRunner.class)
 public class CustomerServiceTests {
@@ -50,7 +44,7 @@ public class CustomerServiceTests {
         customers.add(new Customer("Michele", "Dessler"));*/
 
         long id=6;
-        when(customerRepository.findAll()).thenReturn(customers);
+        //when(customerRepository.findAll()).thenReturn(customers);
         when(customerRepository.findByLastName(anyString())).thenReturn(customers);
         // Customer customer = new Customer("Jovial","Minsky");
         // customer.setId(id);
@@ -74,7 +68,7 @@ public class CustomerServiceTests {
         customers.add(new Customer("Kim", "Bauer"));
         customers.add(new Customer("David", "Palmer"));
         customers.add(new Customer("Michele", "Dessler"));
-        when(customerRepository.findAll()).thenReturn(customers);
+        //when(customerRepository.findAll()).thenReturn(customers);
         Assert.assertEquals(5,customers.size());
     }
 
@@ -88,7 +82,7 @@ public class CustomerServiceTests {
         HashMap<Integer,Customer> repo = new HashMap<>();
         repo.put(1,customer1);
         repo.put(2,customer2);
-        when(customerRepository.findById(1)).thenReturn(Optional.of((customer1)));
+        //when(customerRepository.findById(1)).thenReturn(Optional.of((customer1)));
         Assert.assertEquals("Jack", customer1.getFirstName());
     }
 

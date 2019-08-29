@@ -23,13 +23,13 @@ public class CustomerService {
 
     @Transactional
     public List<Customer> getAllCustomers() {
-        //return customerRepository.findAll();
-        List<Customer> result = (List<Customer>) customerRepository.findAll();
+        return customerRepository.findAll();
+        /*List<Customer> result = (List<Customer>) customerRepository.findAll();
         if(result.size() > 0) {
             return result;
         } else {
             return new ArrayList<Customer>();
-        }
+        } */
     }
 
     //TODO: Implement methods for each controller method. Note that each of them has to call different method from Service.
@@ -40,7 +40,7 @@ public class CustomerService {
         if(customer.isPresent()) {
             return customer.get();
         } else {
-            throw new Exception("No employee record exist for given id");
+            throw new Exception("No customer record exist for given id");
         }
     }//end of getCustomerById method
 
@@ -53,19 +53,17 @@ public class CustomerService {
 
     } // end of getCustomerByLastName
 
-    //createOrUpdateEmployee
+    //createOrUpdatecustomer
     public Customer createOrUpdateCustomer(Customer customer)
     {
         if(customer.getId()  == null)
         {
             customer = customerRepository.save(customer);
-
             return customer;
         }
         else
         {
             Optional<Customer> cust = customerRepository.findById(customer.getId());
-
             if(cust.isPresent())
             {
                 Customer newEntity = cust.get();
@@ -106,7 +104,7 @@ public class CustomerService {
         }
     }
 
-    public void deleteEmployeeByLastName(String lastName) throws Exception {
+    public void deletecustomerByLastName(String lastName) throws Exception {
         List<Customer> customer = customerRepository.findByLastName(lastName);
         if(!customer.isEmpty())
         {
